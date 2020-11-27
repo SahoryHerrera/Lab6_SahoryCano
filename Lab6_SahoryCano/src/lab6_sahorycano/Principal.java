@@ -81,14 +81,13 @@ public class Principal extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         TablaClauModificar = new javax.swing.JTable();
-        jLabel9 = new javax.swing.JLabel();
+        btn_Modificar = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaClauEliminar = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
         EliminarSerVivo = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
-        CBProgramas = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         TablaDatosClau = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
@@ -136,7 +135,7 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel11.setBackground(new java.awt.Color(0, 204, 153));
 
-        AgregarSerVivo1.setBackground(new java.awt.Color(0, 255, 204));
+        AgregarSerVivo1.setBackground(new java.awt.Color(255, 255, 255));
         AgregarSerVivo1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         AgregarSerVivo1.setText("Modificar Programa");
         AgregarSerVivo1.setBorder(null);
@@ -378,8 +377,12 @@ public class Principal extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(TablaClauModificar);
 
-        jLabel9.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel9.setText("* Seleccione una fila para poder modificar un atributo *");
+        btn_Modificar.setText("Modificar Programa");
+        btn_Modificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_ModificarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -389,15 +392,14 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(256, 256, 256)
-                                .addComponent(jLabel8))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(146, 146, 146)
-                                .addComponent(jLabel9)))
+                        .addGap(256, 256, 256)
+                        .addComponent(jLabel8)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(207, 207, 207)
+                .addComponent(btn_Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -405,10 +407,10 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addComponent(jLabel8)
                 .addGap(28, 28, 28)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btn_Modificar)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Modificar Programa", jPanel5);
@@ -475,12 +477,6 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
-        CBProgramas.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                CBProgramasItemStateChanged(evt);
-            }
-        });
-
         TablaDatosClau.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -518,28 +514,22 @@ public class Principal extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(169, 169, 169)
-                                .addComponent(CBProgramas, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(268, 268, 268)
-                                .addComponent(jLabel11))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(270, 270, 270)
-                                .addComponent(GuardarArchivo)))
+                        .addGap(270, 270, 270)
+                        .addComponent(GuardarArchivo)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(290, 290, 290)
+                .addComponent(jLabel11)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CBProgramas, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(GuardarArchivo)
                 .addContainerGap())
@@ -644,12 +634,8 @@ public class Principal extends javax.swing.JFrame {
                 modelo.addRow(newrow);
                 TablaClauEliminar.setModel(modelo);
                 TablaClauModificar.setModel(modelo);
-                DefaultComboBoxModel cb = (DefaultComboBoxModel) CBProgramas.getModel();
-                cb.addElement(new Clau(nombre, puntuacion, años, tipo, genero));
-                CBProgramas.setModel(cb);
-                //                Universo uni = new Universo();
-                uni.getSeresvivos().add(new Clau(nombre, puntuacion, años, tipo, genero));
-                System.out.println(uni.getSeresvivos());
+                c.getSeresvivos().add(new Clau(nombre, puntuacion, años, tipo, genero));
+                System.out.println(c.getSeresvivos());
                 JOptionPane.showMessageDialog(this, "Programa exitosamente");
                 Nombre_Programa.setText("");
                 Puntuacion.setText("");
@@ -678,34 +664,13 @@ public class Principal extends javax.swing.JFrame {
                 modelo.removeRow(TablaClauEliminar.getSelectedRow());
                 TablaClauEliminar.setModel(modelo);
                 TablaClauModificar.setModel(modelo);
-                // Se supone que deberia eliminar del archivo pero no lo hace :(
-                //                Universo uni = new Universo(selectedFile.getPath());
-                //                uni.CargarArchivo(TextAreaArchivo);
-                //                int pos = TablaSeresVivosEliminar.getSelectedRow();
-                //                uni.getSeresvivos().remove(pos);
-                //                uni.EscribirArchivo();
+
             } // Fin If
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Ocurrio un error y no se guardaron los datos");
         } // Fin Try Catch
     }//GEN-LAST:event_EliminarSerVivoMouseClicked
-
-    private void CBProgramasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CBProgramasItemStateChanged
-        // TODO add your handling code here:
-        try {
-            if (evt.getStateChange() == 2) {
-                Clau sv = (Clau) CBProgramas.getSelectedItem();
-                Object[] newrow = {sv.getNombre(), sv.getPuntuacion(), sv.getAños(), sv.getTipo(), sv.getGenero()};
-                DefaultTableModel modelo = (DefaultTableModel) TablaDatosClau.getModel();
-                modelo.addRow(newrow);
-                TablaDatosClau.setModel(modelo);
-            } // Fin If
-        } catch (Exception e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Ocurrio un error y no se mostraron los datos");
-        } // Fin Try Catch
-    }//GEN-LAST:event_CBProgramasItemStateChanged
 
     private void GuardarArchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuardarArchivoMouseClicked
         // TODO add your handling code here:
@@ -790,8 +755,51 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_CargarArchivoMouseClicked
 
     private void AgregarSerVivo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarSerVivo1MouseClicked
+        try {
+            String nombre, tipo, genero;
+            int Puntuacion, años;
+            if (TablaClauModificar.getSelectedRow() >= 0 && TablaClauModificar.getSelectedRow() <= 4) {
+                DefaultTableModel modelo = (DefaultTableModel) TablaClauModificar.getModel();
+                nombre = Nombre_Programa1.getText();
+                modelo.setValueAt(nombre, TablaClauModificar.getSelectedRow(), 0);
+
+                tipo = Tipodeprograma1.getSelectedItem().toString();
+                modelo.setValueAt(tipo, TablaClauModificar.getSelectedRow(), 3);
+
+                genero = Genero_programa1.getSelectedItem().toString();
+                modelo.setValueAt(genero, TablaClauModificar.getSelectedRow(), 4);
+
+                Puntuacion = Integer.parseInt(Puntuacion1.getText());
+                modelo.setValueAt(Puntuacion, TablaClauModificar.getSelectedRow(), 1);
+
+                años = Integer.parseInt(Año_Lanzamiento1.getText());
+                modelo.setValueAt(años, TablaClauModificar.getSelectedRow(), 2);
+                TablaClauModificar.setModel(modelo);
+                TablaClauEliminar.setModel(modelo);
+                TablaDatosClau.setModel(modelo);
+
+                Nombre_Programa1.setText("");
+                Puntuacion1.setText("");
+                Año_Lanzamiento1.setText("");
+                Tipodeprograma1.setSelectedIndex(0);
+                Genero_programa1.setSelectedIndex(0);
+
+                JOptionPane.showMessageDialog(null, "¡Su modificación se realizo con exito!");
+            } // Fin If
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Ocurrio un error y no se guardaron los datos");
+        } // Fin Try Catch
+
         // TODO add your handling code here:
     }//GEN-LAST:event_AgregarSerVivo1MouseClicked
+
+    private void btn_ModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ModificarMouseClicked
+        jD_Modificar.pack();
+        jD_Modificar.setVisible(true);
+        jD_Modificar.setLocationRelativeTo(null);
+
+    }//GEN-LAST:event_btn_ModificarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -833,7 +841,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton AgregarSerVivo1;
     private javax.swing.JFormattedTextField Año_Lanzamiento;
     private javax.swing.JFormattedTextField Año_Lanzamiento1;
-    private javax.swing.JComboBox<String> CBProgramas;
     private javax.swing.JButton CargarArchivo;
     private javax.swing.JButton EliminarSerVivo;
     private javax.swing.JComboBox<String> Genero_programa;
@@ -849,6 +856,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextArea TextAreaArchivo;
     private javax.swing.JComboBox<String> Tipodeprograma;
     private javax.swing.JComboBox<String> Tipodeprograma1;
+    private javax.swing.JButton btn_Modificar;
     private javax.swing.JDialog jD_Modificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -866,7 +874,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -885,7 +892,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 static ArrayList<Clau> Clau = new ArrayList();
-    static claudilist uni = new claudilist();
+    static claudilist c = new claudilist();
     File selectedFile = null;
 
 }
