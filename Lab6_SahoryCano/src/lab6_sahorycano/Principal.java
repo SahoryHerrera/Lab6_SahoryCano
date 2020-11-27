@@ -79,7 +79,6 @@ public class Principal extends javax.swing.JFrame {
         Tipodeprograma = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        ModificarAtributo = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         TablaClauModificar = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
@@ -122,7 +121,7 @@ public class Principal extends javax.swing.JFrame {
 
         Genero_programa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Comedia", "romance", "terror", "SyFy", "Suspenso", "accion" }));
 
-        jPanel10.setBackground(new java.awt.Color(0, 255, 204));
+        jPanel10.setBackground(new java.awt.Color(0, 204, 153));
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -135,7 +134,7 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 26, Short.MAX_VALUE)
         );
 
-        jPanel11.setBackground(new java.awt.Color(0, 255, 204));
+        jPanel11.setBackground(new java.awt.Color(0, 204, 153));
 
         AgregarSerVivo1.setBackground(new java.awt.Color(0, 255, 204));
         AgregarSerVivo1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -361,13 +360,6 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel8.setText("Modificar Programa");
 
-        ModificarAtributo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "Poder", "Años", "Planeta de procedencia", "Raza" }));
-        ModificarAtributo.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                ModificarAtributoItemStateChanged(evt);
-            }
-        });
-
         TablaClauModificar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -395,19 +387,16 @@ public class Principal extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(111, 111, 111)
-                                .addComponent(ModificarAtributo, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(256, 256, 256)
                                 .addComponent(jLabel8))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(146, 146, 146)
                                 .addComponent(jLabel9)))
-                        .addGap(0, 132, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -415,10 +404,8 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel8)
-                .addGap(18, 18, 18)
-                .addComponent(ModificarAtributo, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -683,109 +670,6 @@ public class Principal extends javax.swing.JFrame {
         } // Fin Try Catch
     }//GEN-LAST:event_AgregarSerVivoMouseClicked
 
-    private void ModificarAtributoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ModificarAtributoItemStateChanged
-        // TODO add your handling code here:
-        try {
-            String nombre, planeta, raza;
-            int poder, años;
-            switch (ModificarAtributo.getSelectedIndex()) {
-                case 0:
-                    if (TablaClauModificar.getSelectedRow() >= 0) {
-                        DefaultTableModel modelo = (DefaultTableModel) TablaClauModificar.getModel();
-                        nombre = JOptionPane.showInputDialog("Ingrese el nuevo nombre: ");
-                        modelo.setValueAt(nombre, TablaClauModificar.getSelectedRow(), 0);
-                        TablaClauModificar.setModel(modelo);
-                        TablaClauEliminar.setModel(modelo);
-                        //                        Universo uni = new Universo(selectedFile.getPath());
-                        //                        uni.CargarArchivo(TextAreaArchivo);
-                        //                        int pos = TablaSeresVivosModificar.getSelectedRow();
-                        //                        uni.getSeresvivos().get(pos).setNombre(nombre);
-                        //                        uni.EscribirArchivo();
-                    } // Fin If
-                    break;
-                case 1:
-                    if (TablaClauModificar.getSelectedRow() >= 0) {
-                        DefaultTableModel modelo1 = (DefaultTableModel) TablaClauModificar.getModel();
-                        poder = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el nuevo poder: "));
-                        modelo1.setValueAt(poder, TablaClauModificar.getSelectedRow(), 1);
-                        TablaClauModificar.setModel(modelo1);
-                        TablaClauEliminar.setModel(modelo1);
-                        //                        Universo uni = new Universo(selectedFile.getPath());
-                        //                        uni.CargarArchivo(TextAreaArchivo);
-                        //                        int pos = TablaSeresVivosModificar.getSelectedRow();
-                        //                        uni.getSeresvivos().get(pos).setPoder(poder);
-                        //                        uni.EscribirArchivo();
-                    } // Fin If
-                    break;
-                case 2:
-                    if (TablaClauModificar.getSelectedRow() >= 0) {
-                        DefaultTableModel modelo2 = (DefaultTableModel) TablaClauModificar.getModel();
-                        años = Integer.parseInt(JOptionPane.showInputDialog("Ingrese los nuevos años: "));
-                        modelo2.setValueAt(años, TablaClauModificar.getSelectedRow(), 2);
-                        TablaClauModificar.setModel(modelo2);
-                        TablaClauEliminar.setModel(modelo2);
-                        //                        Universo uni = new Universo(selectedFile.getPath());
-                        //                        uni.CargarArchivo(TextAreaArchivo);
-                        //                        int pos = TablaSeresVivosModificar.getSelectedRow();
-                        //                        uni.getSeresvivos().get(pos).setAños(años);
-                        //                        uni.EscribirArchivo();
-                    } // Fin If
-                    break;
-                case 3:
-                    if (TablaClauModificar.getSelectedRow() >= 0) {
-                        DefaultTableModel modelo3 = (DefaultTableModel) TablaClauModificar.getModel();
-                        planeta = JOptionPane.showInputDialog("Ingrese el nuevo planeta: ");
-                        modelo3.setValueAt(planeta, TablaClauModificar.getSelectedRow(), 3);
-                        TablaClauModificar.setModel(modelo3);
-                        TablaClauEliminar.setModel(modelo3);
-                        //                        Universo uni = new Universo(selectedFile.getPath());
-                        //                        uni.CargarArchivo(TextAreaArchivo);
-                        //                        int pos = TablaSeresVivosModificar.getSelectedRow();
-                        //                        uni.getSeresvivos().get(pos).setPlaneta(planeta);
-                        //                        uni.EscribirArchivo()
-                    } // Fin If
-                    break;
-                case 4:
-                    if (TablaClauModificar.getSelectedRow() >= 0) {
-                        DefaultTableModel modelo4 = (DefaultTableModel) TablaClauModificar.getModel();
-                        int opcion = Integer.parseInt(JOptionPane.showInputDialog("1. Humano" + "\n" + "2. Amanto" + "\n" + "Ingrese la nueva raza: "));
-                        switch (opcion) {
-                            case 1:
-                                raza = "Humano";
-                                modelo4.setValueAt(raza, TablaClauModificar.getSelectedRow(), 4);
-                                TablaClauModificar.setModel(modelo4);
-                                TablaClauEliminar.setModel(modelo4);
-                                //                        Universo uni = new Universo(selectedFile.getPath());
-                                //                        uni.CargarArchivo(TextAreaArchivo);
-                                //                        int pos = TablaSeresVivosModificar.getSelectedRow();
-                                //                        uni.getSeresvivos().get(pos).setRaza(raza);
-                                //                        uni.EscribirArchivo()
-                                break;
-                            case 2:
-                                raza = "Amanto";
-                                modelo4.setValueAt(raza, TablaClauModificar.getSelectedRow(), 4);
-                                TablaClauModificar.setModel(modelo4);
-                                TablaClauEliminar.setModel(modelo4);
-                                //                        Universo uni = new Universo(selectedFile.getPath());
-                                //                        uni.CargarArchivo(TextAreaArchivo);
-                                //                        int pos = TablaSeresVivosModificar.getSelectedRow();
-                                //                        uni.getSeresvivos().get(pos).setRaza(raza);
-                                //                        uni.EscribirArchivo()
-                                break;
-                            default:
-                                JOptionPane.showMessageDialog(this, "Opcion no valida");
-                        } // Fin Switch
-                    } // Fin If
-                    break;
-                default:
-                    JOptionPane.showMessageDialog(this, "Ocurrio un error y no se pudo modificar");
-            } // Fin Switch
-        } catch (Exception e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Ocurrio un error y no se guardaron los datos");
-        } // Fin Try Catch
-    }//GEN-LAST:event_ModificarAtributoItemStateChanged
-
     private void EliminarSerVivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EliminarSerVivoMouseClicked
         // TODO add your handling code here:
         try {
@@ -955,7 +839,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Genero_programa;
     private javax.swing.JComboBox<String> Genero_programa1;
     private javax.swing.JButton GuardarArchivo;
-    private javax.swing.JComboBox<String> ModificarAtributo;
     private javax.swing.JTextField Nombre_Programa;
     private javax.swing.JTextField Nombre_Programa1;
     private javax.swing.JFormattedTextField Puntuacion;
