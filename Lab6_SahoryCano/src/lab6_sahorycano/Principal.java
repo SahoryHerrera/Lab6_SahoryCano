@@ -634,6 +634,7 @@ public class Principal extends javax.swing.JFrame {
                 modelo.addRow(newrow);
                 TablaClauEliminar.setModel(modelo);
                 TablaClauModificar.setModel(modelo);
+                TablaDatosClau.setModel(modelo);
                 c.getSeresvivos().add(new Clau(nombre, puntuacion, años, tipo, genero));
                 System.out.println(c.getSeresvivos());
                 JOptionPane.showMessageDialog(this, "Programa exitosamente");
@@ -744,7 +745,7 @@ public class Principal extends javax.swing.JFrame {
                 } // Fin If
             } // Fin If
         } else {
-            JOptionPane.showMessageDialog(this, "¡La tabla debe tener por lo menos 1 ser vivo!");
+            JOptionPane.showMessageDialog(this, "¡La tabla debe tener por lo menos 1 un programa!");
         }
     }//GEN-LAST:event_GuardarArchivoMouseClicked
 
