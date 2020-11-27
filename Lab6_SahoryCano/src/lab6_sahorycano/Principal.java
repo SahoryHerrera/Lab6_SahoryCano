@@ -43,6 +43,22 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jD_Modificar = new javax.swing.JDialog();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        Nombre_Programa1 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        Puntuacion1 = new javax.swing.JFormattedTextField();
+        jLabel15 = new javax.swing.JLabel();
+        Año_Lanzamiento1 = new javax.swing.JFormattedTextField();
+        jLabel16 = new javax.swing.JLabel();
+        Tipodeprograma1 = new javax.swing.JComboBox<>();
+        jLabel17 = new javax.swing.JLabel();
+        Genero_programa1 = new javax.swing.JComboBox<>();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        AgregarSerVivo1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -55,12 +71,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        NombreSerVivo = new javax.swing.JTextField();
-        PoderSerVivo = new javax.swing.JFormattedTextField();
-        AñosSerVivo = new javax.swing.JFormattedTextField();
-        PlanetaSerVivo = new javax.swing.JTextField();
-        RazaSerVivo = new javax.swing.JComboBox<>();
+        Nombre_Programa = new javax.swing.JTextField();
+        Puntuacion = new javax.swing.JFormattedTextField();
+        Año_Lanzamiento = new javax.swing.JFormattedTextField();
+        Genero_programa = new javax.swing.JComboBox<>();
         AgregarSerVivo = new javax.swing.JButton();
+        Tipodeprograma = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         ModificarAtributo = new javax.swing.JComboBox<>();
@@ -82,6 +98,141 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         TextAreaArchivo = new javax.swing.JTextArea();
         CargarArchivo = new javax.swing.JButton();
+
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel12.setFont(new java.awt.Font("Strawberry Blossom", 0, 48)); // NOI18N
+        jLabel12.setText("Agregar Programa");
+
+        jLabel13.setText("Nombre: ");
+
+        jLabel14.setText("Puntuación");
+
+        Puntuacion1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+
+        jLabel15.setText("Año  de lanzamiento");
+
+        Año_Lanzamiento1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+
+        jLabel16.setText("Tipo");
+
+        Tipodeprograma1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anime", "serie", "documental", "película" }));
+
+        jLabel17.setText("Genero");
+
+        Genero_programa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Comedia", "romance", "terror", "SyFy", "Suspenso", "accion" }));
+
+        jPanel10.setBackground(new java.awt.Color(0, 255, 204));
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 26, Short.MAX_VALUE)
+        );
+
+        jPanel11.setBackground(new java.awt.Color(0, 255, 204));
+
+        AgregarSerVivo1.setBackground(new java.awt.Color(0, 255, 204));
+        AgregarSerVivo1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        AgregarSerVivo1.setText("Modificar Programa");
+        AgregarSerVivo1.setBorder(null);
+        AgregarSerVivo1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AgregarSerVivo1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(227, Short.MAX_VALUE)
+                .addComponent(AgregarSerVivo1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(218, 218, 218))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(AgregarSerVivo1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel17))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Puntuacion1)
+                            .addComponent(Año_Lanzamiento1)
+                            .addComponent(Genero_programa1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Nombre_Programa1)
+                            .addComponent(Tipodeprograma1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel12)
+                        .addGap(213, 213, 213))
+                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(Nombre_Programa1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(Puntuacion1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(Año_Lanzamiento1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(Tipodeprograma1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(Genero_programa1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(58, 58, 58)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
+        );
+
+        javax.swing.GroupLayout jD_ModificarLayout = new javax.swing.GroupLayout(jD_Modificar.getContentPane());
+        jD_Modificar.getContentPane().setLayout(jD_ModificarLayout);
+        jD_ModificarLayout.setHorizontalGroup(
+            jD_ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jD_ModificarLayout.setVerticalGroup(
+            jD_ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -130,11 +281,11 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel7.setText("Genero");
 
-        PoderSerVivo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        Puntuacion.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
-        AñosSerVivo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        Año_Lanzamiento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
-        RazaSerVivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Humano", "Amanto" }));
+        Genero_programa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Comedia", "romance", "terror", "SyFy", "Suspenso", "accion" }));
 
         AgregarSerVivo.setText("Agregar Programa");
         AgregarSerVivo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -142,6 +293,8 @@ public class Principal extends javax.swing.JFrame {
                 AgregarSerVivoMouseClicked(evt);
             }
         });
+
+        Tipodeprograma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anime", "serie", "documental", "película" }));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -157,11 +310,11 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PoderSerVivo)
-                    .addComponent(AñosSerVivo)
-                    .addComponent(PlanetaSerVivo)
-                    .addComponent(RazaSerVivo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(NombreSerVivo))
+                    .addComponent(Puntuacion)
+                    .addComponent(Año_Lanzamiento)
+                    .addComponent(Genero_programa, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Nombre_Programa)
+                    .addComponent(Tipodeprograma, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(0, 282, Short.MAX_VALUE)
@@ -180,23 +333,23 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(NombreSerVivo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Nombre_Programa, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(PoderSerVivo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Puntuacion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(AñosSerVivo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Año_Lanzamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(PlanetaSerVivo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Tipodeprograma, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(RazaSerVivo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Genero_programa, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(AgregarSerVivo, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
                 .addContainerGap())
@@ -492,11 +645,11 @@ public class Principal extends javax.swing.JFrame {
         String nombre, tipo, genero;
         int puntuacion, años;
         try {
-            nombre = NombreSerVivo.getText();
-            puntuacion = Integer.parseInt(PoderSerVivo.getText());
-            años = Integer.parseInt(AñosSerVivo.getText());
-            tipo = PlanetaSerVivo.getText();
-            genero = RazaSerVivo.getSelectedItem().toString();
+            nombre = Nombre_Programa.getText();
+            puntuacion = Integer.parseInt(Puntuacion.getText());
+            años = Integer.parseInt(Año_Lanzamiento.getText());
+            tipo = Tipodeprograma.getSelectedItem().toString();
+            genero = Genero_programa.getSelectedItem().toString();
             if (puntuacion >= 1 && puntuacion <= 10) {
                 Clau.add(new Clau(nombre, puntuacion, años, tipo, genero));
                 Object[] newrow = {nombre, puntuacion, años, tipo, genero};
@@ -510,19 +663,19 @@ public class Principal extends javax.swing.JFrame {
                 //                Universo uni = new Universo();
                 uni.getSeresvivos().add(new Clau(nombre, puntuacion, años, tipo, genero));
                 System.out.println(uni.getSeresvivos());
-                JOptionPane.showMessageDialog(this, "Ser vivo agregado exitosamente");
-                NombreSerVivo.setText("");
-                PoderSerVivo.setText("");
-                AñosSerVivo.setText("");
-                PlanetaSerVivo.setText("");
-                RazaSerVivo.setSelectedIndex(0);
+                JOptionPane.showMessageDialog(this, "Programa exitosamente");
+                Nombre_Programa.setText("");
+                Puntuacion.setText("");
+                Año_Lanzamiento.setText("");
+                Tipodeprograma.setSelectedIndex(0);
+                Genero_programa.setSelectedIndex(0);
             } else {
-                JOptionPane.showMessageDialog(this, "¡El poder debe ser de 1 a 10!");
-                NombreSerVivo.setText("");
-                PoderSerVivo.setText("");
-                AñosSerVivo.setText("");
-                PlanetaSerVivo.setText("");
-                RazaSerVivo.setSelectedIndex(0);
+                JOptionPane.showMessageDialog(this, "¡La puntuación debe ser de 1 a 10!");
+                Nombre_Programa.setText("");
+                Puntuacion.setText("");
+                Año_Lanzamiento.setText("");
+                Tipodeprograma.setSelectedIndex(0);
+                Genero_programa.setSelectedIndex(0);
             } // Fin If
         } catch (Exception e) {
             e.printStackTrace();
@@ -752,6 +905,10 @@ public class Principal extends javax.swing.JFrame {
         u.CargarArchivo(TextAreaArchivo);
     }//GEN-LAST:event_CargarArchivoMouseClicked
 
+    private void AgregarSerVivo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarSerVivo1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AgregarSerVivo1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -789,23 +946,36 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AgregarSerVivo;
-    private javax.swing.JFormattedTextField AñosSerVivo;
+    private javax.swing.JButton AgregarSerVivo1;
+    private javax.swing.JFormattedTextField Año_Lanzamiento;
+    private javax.swing.JFormattedTextField Año_Lanzamiento1;
     private javax.swing.JComboBox<String> CBProgramas;
     private javax.swing.JButton CargarArchivo;
     private javax.swing.JButton EliminarSerVivo;
+    private javax.swing.JComboBox<String> Genero_programa;
+    private javax.swing.JComboBox<String> Genero_programa1;
     private javax.swing.JButton GuardarArchivo;
     private javax.swing.JComboBox<String> ModificarAtributo;
-    private javax.swing.JTextField NombreSerVivo;
-    private javax.swing.JTextField PlanetaSerVivo;
-    private javax.swing.JFormattedTextField PoderSerVivo;
-    private javax.swing.JComboBox<String> RazaSerVivo;
+    private javax.swing.JTextField Nombre_Programa;
+    private javax.swing.JTextField Nombre_Programa1;
+    private javax.swing.JFormattedTextField Puntuacion;
+    private javax.swing.JFormattedTextField Puntuacion1;
     private javax.swing.JTable TablaClauEliminar;
     private javax.swing.JTable TablaClauModificar;
     private javax.swing.JTable TablaDatosClau;
     private javax.swing.JTextArea TextAreaArchivo;
+    private javax.swing.JComboBox<String> Tipodeprograma;
+    private javax.swing.JComboBox<String> Tipodeprograma1;
+    private javax.swing.JDialog jD_Modificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -815,6 +985,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -822,6 +994,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
