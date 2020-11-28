@@ -94,7 +94,7 @@ public class Principal extends javax.swing.JFrame {
         GuardarArchivo = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        TextAreaArchivo = new javax.swing.JTextArea();
+        Abrir_Archivo = new javax.swing.JTextArea();
         CargarArchivo = new javax.swing.JButton();
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
@@ -539,9 +539,9 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        TextAreaArchivo.setColumns(20);
-        TextAreaArchivo.setRows(5);
-        jScrollPane3.setViewportView(TextAreaArchivo);
+        Abrir_Archivo.setColumns(20);
+        Abrir_Archivo.setRows(5);
+        jScrollPane3.setViewportView(Abrir_Archivo);
 
         CargarArchivo.setText("Cargar Archivo");
         CargarArchivo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -685,7 +685,7 @@ public class Principal extends javax.swing.JFrame {
                         if (j == modelot.getColumnCount() - 1) {
                             acum += modelot.getValueAt(i, j);
                         } else {
-                            acum += modelot.getValueAt(i, j) + "|";
+                            acum += modelot.getValueAt(i, j) + "/";
                         } // Fin If
                     } // Fin For
                     acum += "\n";
@@ -750,9 +750,41 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_GuardarArchivoMouseClicked
 
     private void CargarArchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CargarArchivoMouseClicked
-        // TODO add your handling code here:
-        claudilist u = new claudilist(selectedFile.getPath());
-        u.CargarArchivo(TextAreaArchivo);
+ File fichero = null;
+        FileReader fr = null;
+        BufferedReader br = null;
+        Abrir_Archivo.setText("");
+        try {
+            JFileChooser jfc = new JFileChooser("./");
+            FileNameExtensionFilter filtro
+                    = new FileNameExtensionFilter(
+                            "Archivos de Texto", "txt");
+            FileNameExtensionFilter filtro2
+                    = new FileNameExtensionFilter(
+                            "Imagenes", "jpg", "png", "bmp");
+            jfc.setFileFilter(filtro);
+            jfc.addChoosableFileFilter(filtro2);
+            int seleccion = jfc.showOpenDialog(this);
+            if (seleccion == JFileChooser.APPROVE_OPTION) {
+                fichero = jfc.getSelectedFile();
+                fr = new FileReader(fichero);
+                br = new BufferedReader(fr);
+                String linea;
+                Abrir_Archivo.setText("");
+                while ((linea = br.readLine()) != null) {
+                    Abrir_Archivo.append(linea);
+                    Abrir_Archivo.append("\n");
+                }
+            } //fin if
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            br.close();
+            fr.close();
+        } catch (IOException ex) {
+        }
     }//GEN-LAST:event_CargarArchivoMouseClicked
 
     private void AgregarSerVivo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarSerVivo1MouseClicked
@@ -838,6 +870,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea Abrir_Archivo;
     private javax.swing.JButton AgregarSerVivo;
     private javax.swing.JButton AgregarSerVivo1;
     private javax.swing.JFormattedTextField Año_Lanzamiento;
@@ -854,7 +887,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable TablaClauEliminar;
     private javax.swing.JTable TablaClauModificar;
     private javax.swing.JTable TablaDatosClau;
-    private javax.swing.JTextArea TextAreaArchivo;
     private javax.swing.JComboBox<String> Tipodeprograma;
     private javax.swing.JComboBox<String> Tipodeprograma1;
     private javax.swing.JButton btn_Modificar;
